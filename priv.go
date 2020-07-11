@@ -2,7 +2,6 @@
 package daemon
 
 import (
-	"errors"
 	"os/user"
 	"strconv"
 	"syscall"
@@ -37,7 +36,7 @@ func DegradeToUser(uname string) error {
 			return err
 		}
 	} else {
-		return errors.New(ErrorNotRoot)
+		return ErrorNotRoot
 	}
 
 	return nil
